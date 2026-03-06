@@ -9,7 +9,8 @@
     "dev": "nodemon --watch 'src/**/*.ts' --exec tsx src/server.ts",
     "generate:auth":"npx auth@latest generate --output src/db/auth/auth-schema.ts",
     "migrate:drizzle":"npx drizzle-kit migrate",
-    "generate:drizzle":"npx drizzle-kit generate"
+    "generate:drizzle":"npx drizzle-kit generate",
+    "migrate:fresh":"node src/utils/drop-all-tables.ts && npx drizzle-kit generate && npx drizzle-kit migrate"
   },
   "author": "syauqi",
   "license": "MIT",
