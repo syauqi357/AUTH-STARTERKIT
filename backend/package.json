@@ -1,0 +1,32 @@
+{
+  "name": "express-betterauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec tsx src/server.ts",
+    "generate:auth":"npx auth@latest generate --output src/db/auth/auth-schema.ts",
+    "migrate:drizzle":"npx drizzle-kit migrate",
+    "generate:drizzle":"npx drizzle-kit generate"
+  },
+  "author": "syauqi",
+  "license": "MIT",
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.5.4",
+    "better-auth": "^1.5.4",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.5",
+    "drizzle-kit": "^0.31.9",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
