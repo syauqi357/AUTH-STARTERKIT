@@ -1,17 +1,18 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { authClient } from '$lib/auth-client';
+	import { onMount } from 'svelte';
 
 	let session = $state<any>(null);
 
-	$effect(() => {
-		authClient.getSession().then((res) => {
-			console.log(res);
-			session = res.data;
-		});
+	onMount(async () => {
+		const res = await authClient.getSession();
+		session = res.data;
 	});
 
 	async function handlelogout() {
 		await authClient.signOut();
+		goto('/login');
 	}
 </script>
 
@@ -19,7 +20,7 @@
 	{#if session}
 		<div>
 			<p>
-				{$session.user.name}
+				{session.user.name}
 			</p>
 			<button
 				onclick={handlelogout}
