@@ -29,21 +29,20 @@
 	}
 </script>
 
-<div class="flex min-h-screen flex-col justify-center bg-gray-100 px-4 py-12">
-	<!-- Logo -->
-	<div class="mb-6 flex justify-center">
-		<div class="flex h-16 w-16 items-center justify-center rounded-full bg-gray-800"></div>
-	</div>
-
-	<!-- Card -->
-	<div class="mx-auto w-full max-w-md rounded-lg bg-white px-8 py-8 shadow-sm">
+<div class="flex min-h-screen flex-col justify-center bg-[#0a0a0a] px-4 font-mono">
+	<div class="mx-auto w-full max-w-sm">
 		{#if success}
 			<!-- Success state -->
 			<div class="text-center">
 				<div
-					class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100"
+					class="mx-auto mb-6 flex h-10 w-10 items-center justify-center rounded-full border border-emerald-500/20 bg-emerald-500/5"
 				>
-					<svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg
+						class="h-4 w-4 text-emerald-400"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -52,56 +51,67 @@
 						/>
 					</svg>
 				</div>
-				<h2 class="mb-2 text-xl font-semibold text-gray-800">Check your email</h2>
-				<p class="mb-6 text-sm text-gray-500">
-					We sent a password reset link to <span class="font-medium text-gray-700">{email}</span>
+				<h2 class="mb-2 text-xl font-light text-white/90">Check your email</h2>
+				<p class="mb-8 text-sm text-white/30">
+					Reset link sent to <span class="text-white/60">{email}</span>
 				</p>
 				<button
 					onclick={() => goto('/login')}
-					class="text-sm font-medium text-gray-700 hover:underline"
+					class="text-xs tracking-widest text-white/20 uppercase transition-colors hover:text-white/50"
 				>
 					Back to sign in
 				</button>
 			</div>
 		{:else}
-			<!-- Form state -->
-			<h2 class="mb-2 text-center text-2xl font-semibold text-gray-800">Forgot password?</h2>
-			<p class="mb-6 text-center text-sm text-gray-500">
-				Enter your email and we'll send you a reset link
-			</p>
+			<!-- Header -->
+			<div class="mb-10">
+				<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
+				<h1 class="text-3xl font-light tracking-tight text-white/90">Forgot password?</h1>
+				<p class="mt-2 text-sm text-white/30">We'll send a reset link to your email</p>
+			</div>
 
-			<form onsubmit={handleForgotPassword} class="space-y-5">
+			<!-- Form -->
+			<form onsubmit={handleForgotPassword} class="space-y-4">
 				{#if error}
-					<div class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+					<div
+						class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
+					>
 						{error}
 					</div>
 				{/if}
 
-				<div>
-					<label class="mb-1 block text-sm font-medium text-gray-700">Email</label>
+				<div class="space-y-1.5">
+					<label class="text-xs tracking-widest text-white/20 uppercase" for="email">Email</label>
 					<input
 						type="email"
 						bind:value={email}
 						required
+						name="email"
 						autocomplete="email"
-						class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 focus:outline-none"
+						class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 					/>
 				</div>
 
 				<button
 					type="submit"
 					disabled={isLoading}
-					class="w-full rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-50"
+					class="mt-2 w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 				>
 					{isLoading ? 'Sending...' : 'Send reset link'}
 				</button>
 			</form>
+
+			<!-- Footer -->
+			<div class="mt-8 flex items-center gap-3">
+				<div class="h-px flex-1 bg-white/4"></div>
+				<a
+					href="/login"
+					class="text-xs tracking-wider text-white/20 transition-colors hover:text-white/40"
+				>
+					Back to sign in
+				</a>
+				<div class="h-px flex-1 bg-white/4"></div>
+			</div>
 		{/if}
 	</div>
-
-	<!-- Footer -->
-	<p class="mt-6 text-center text-sm text-gray-500">
-		Remembered your password?
-		<a href="/login" class="font-medium text-gray-700 hover:underline">Sign in</a>
-	</p>
 </div>

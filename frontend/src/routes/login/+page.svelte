@@ -27,60 +27,69 @@
 			isLoading = false;
 		}
 	}
-
-	function createAccwithSignup() {
-		goto('/signup');
-	}
 </script>
 
-<div class="flex min-h-screen flex-col justify-center bg-gray-100 px-4 py-12">
-	<!-- Logo -->
-	<div class="mb-6 flex justify-center">
-		<div class="flex h-16 w-16 gap-2 items-center justify-center">
-			<img src="../src/lib/assets/favicon.svg" alt="" srcset="" />
-			<img src="../src/lib/assets/plus.svg" alt="" srcset="" />
-			<img src="../src/lib/assets/better-auth.png" alt="" srcset="" />
-			<img src="../src/lib/assets/plus.svg" alt="" srcset="" />
-			<img src="../src/lib/assets/express.svg" alt="" srcset="" />
+<div class="flex min-h-screen flex-col justify-center bg-[#0a0a0a] px-4 font-mono">
+	<div class="mx-auto w-full max-w-sm">
+		<!-- Logo strip -->
+		<div class="mb-12 flex items-center justify-center gap-2.5 opacity-40">
+			<img src="../src/lib/assets/favicon.svg" alt="" class="h-6 w-6" />
+			<span class="text-xs text-white/30">+</span>
+			<img src="../src/lib/assets/better-auth.png" alt="" class="h-5" />
+			<span class="text-xs text-white/30">+</span>
+			<img src="../src/lib/assets/express.svg" alt="" class="h-5" />
 		</div>
-	</div>
 
-	<!-- Card -->
-	<div class="mx-auto w-full max-w-md rounded-lg bg-white px-8 py-8 shadow-sm">
-		<h2 class="mb-6 text-center text-2xl font-semibold text-gray-800">Sign in</h2>
+		<!-- Header -->
+		<div class="mb-10">
+			<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
+			<h1 class="text-3xl font-light tracking-tight text-white/90">Sign in</h1>
+			<p class="mt-2 text-sm text-white/30">Welcome back</p>
+		</div>
 
-		<form onsubmit={handleLogin} class="space-y-5">
+		<!-- Form -->
+		<form onsubmit={handleLogin} class="space-y-4">
 			{#if error}
-				<div class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+				<div
+					class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
+				>
 					{error}
 				</div>
 			{/if}
 
-			<div>
-				<label class="mb-1 block text-sm font-medium text-gray-700" for="username">Username</label>
+			<div class="space-y-1.5">
+				<label class="text-xs tracking-widest text-white/20 uppercase" for="username"
+					>Username</label
+				>
 				<input
 					type="text"
 					id="username"
 					bind:value={username}
 					required
 					autocomplete="username"
-					class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 focus:outline-none"
+					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
-			<div>
-				<label class="mb-1 block text-sm font-medium text-gray-700" for="password">Password</label>
+			<div class="space-y-1.5">
+				<label class="text-xs tracking-widest text-white/20 uppercase" for="password"
+					>Password</label
+				>
 				<input
 					type="password"
+					id="password"
 					bind:value={password}
 					required
 					autocomplete="current-password"
-					class="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 focus:outline-none"
+					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
-			<div class="flex items-center justify-between">
-				<a href="/forgot-password" class="text-sm text-gray-500 hover:text-gray-700">
+			<div class="flex justify-end">
+				<a
+					href="/forgot-password"
+					class="text-xs tracking-wider text-white/20 transition-colors hover:text-white/40"
+				>
 					Forgot password?
 				</a>
 			</div>
@@ -88,16 +97,20 @@
 			<button
 				type="submit"
 				disabled={isLoading}
-				class="w-full rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-50"
+				class="w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 			>
 				{isLoading ? 'Signing in...' : 'Sign in'}
 			</button>
 		</form>
-	</div>
 
-	<!-- Footer -->
-	<p class="mt-6 text-center text-sm text-gray-500">
-		Don't have an account?
-		<a href="/signup" class="font-medium text-gray-700 hover:underline">Sign up</a>
-	</p>
+		<!-- Footer -->
+		<div class="mt-8 flex items-center gap-3">
+			<div class="h-px flex-1 bg-white/4"></div>
+			<p class="text-xs tracking-wider text-white/20">
+				No account?
+				<a href="/signup" class="text-white/40 transition-colors hover:text-white/60">Sign up</a>
+			</p>
+			<div class="h-px flex-1 bg-white/4"></div>
+		</div>
+	</div>
 </div>

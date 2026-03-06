@@ -19,24 +19,68 @@
 				newPassword,
 				token
 			});
+
 			if (authError) throw new Error(authError.message);
-            goto('/login');
+
+			goto('/login');
 		} catch (err) {
-			error = err instanceof Error ? err.message : 'error occurred during password reset.';
+			error = err instanceof Error ? err.message : 'An error occurred';
 		} finally {
 			isLoading = false;
 		}
 	}
 </script>
 
-<form action="" onsubmit={handleResetPassword}>
-	<label for="newPassword">password baru</label>
-	<input
-		type="password"
-		name="newPassword"
-		placeholder="New Password"
-		bind:value={newPassword}
-		required
-	/>
-	<button type="submit"> Reset Password </button>
-</form>
+<div class="flex min-h-screen flex-col justify-center bg-[#0a0a0a] px-4 font-mono">
+	<div class="mx-auto w-full max-w-sm">
+		<!-- Header -->
+		<div class="mb-10">
+			<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
+			<h1 class="text-3xl font-light tracking-tight text-white/90">Reset password</h1>
+			<p class="mt-2 text-sm text-white/30">Enter your new password below</p>
+		</div>
+
+		<!-- Form -->
+		<form onsubmit={handleResetPassword} class="space-y-4">
+			{#if error}
+				<div
+					class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
+				>
+					{error}
+				</div>
+			{/if}
+
+			<div class="space-y-1.5">
+				<label class="text-xs tracking-widest text-white/20 uppercase" for="newPasswordreset">New Password</label>
+				<input
+					type="password"
+					bind:value={newPassword}
+                    name="newPasswordreset"
+					required
+					autocomplete="new-password"
+					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+				/>
+			</div>
+
+			<button
+				type="submit"
+				disabled={isLoading}
+				class="mt-2 w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+			>
+				{isLoading ? 'Resetting...' : 'Reset Password'}
+			</button>
+		</form>
+
+		<!-- Footer -->
+		<div class="mt-8 flex items-center gap-3">
+			<div class="h-px flex-1 bg-white/4"></div>
+			<a
+				href="/login"
+				class="text-xs tracking-wider text-white/20 transition-colors hover:text-white/40"
+			>
+				Back to sign in
+			</a>
+			<div class="h-px flex-1 bg-white/4"></div>
+		</div>
+	</div>
+</div>
