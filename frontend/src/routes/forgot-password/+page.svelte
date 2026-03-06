@@ -15,11 +15,11 @@
 		try {
 			const { error: authError } = await authClient.requestPasswordReset({
 				email,
-				redirectTo: '/reset-password'
+				redirectTo: `${import.meta.env.VITE_APP_URL}/reset-password`
 			});
 
 			if (authError) throw new Error(authError.message);
-success = true;
+			success = true;
 			// goto('/dashboard');
 		} catch (err) {
 			error = err instanceof Error ? err.message : 'error occurred.';
