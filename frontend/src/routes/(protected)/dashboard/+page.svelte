@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { authClient } from '$lib/auth-client';
-	import type { PageProps } from './$types';
 
-	let { data }: PageProps = $props();
+	let session = $state<any>(null);
 
-	const session = authClient.useSession();
+	$effect(() => {
+		authClient.getSession().then((res) => {
+			console.log(res);
+			session = res.data;
+		});
+	});
 
 	async function handlelogout() {
 		await authClient.signOut();
@@ -12,12 +16,17 @@
 </script>
 
 <div>
-	{#if $session.data}
+	{#if session}
 		<div>
 			<p>
-				{$session.data.user.name}
+				{$session.user.name}
 			</p>
-			<button onclick={handlelogout} class="bg-red-500 text-red-50 rounded-md px-4 py-1.5 hover:bg-red-600"> Sign Out </button>
+			<button
+				onclick={handlelogout}
+				class="rounded-md bg-red-500 px-4 py-1.5 text-red-50 hover:bg-red-600"
+			>
+				Sign Out
+			</button>
 		</div>
 	{/if}
 </div>

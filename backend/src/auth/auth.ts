@@ -13,6 +13,20 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+
+    // forgot password flow, you need to implement how to send reset password email to users
+    sendResetPassword: async ({
+      user,
+      url,
+    }: {
+      user: {
+        email: string;
+      };
+      url: string;
+    }) => {
+      // send email using your email provider
+      console.log(`Send email to ${user.email} : ${url}`);
+    },
   },
   plugins: [username()],
 });
