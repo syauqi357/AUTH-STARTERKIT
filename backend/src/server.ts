@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 // setup dotenv
 import dotenv from "dotenv";
 import { toNodeHandler } from "better-auth/node";
@@ -7,8 +8,19 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  }),
+);
 
-app.all("api/auth/*splat", toNodeHandler(auth));
+app.use((req, res, next) => {
+  console.log(req.method, req.path);
+  next();
+});
+
+app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
 
 app.get("/", (req, res) => {
