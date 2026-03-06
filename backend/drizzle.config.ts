@@ -6,8 +6,11 @@ dotenv.config();
 
 export default defineConfig({
    dialect: "mysql",
-   out: ".src/db/migrations",
-   schema: "./src/db/schema",
+   out: "./src/db/migrations",
+   schema: [
+      "./src/db/schema",
+      "./src/db/auth"
+   ],
    dbCredentials:{
       url:process.env.DATABASE_URL!
    }

@@ -5,6 +5,7 @@ frontend/dist
 .env
 frontend/.env
 backend/.env
+backend/src/db/migrations
 .DS_Store
 .vscode
 .idea
