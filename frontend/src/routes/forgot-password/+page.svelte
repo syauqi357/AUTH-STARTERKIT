@@ -73,9 +73,7 @@
 			<!-- Form -->
 			<form onsubmit={handleForgotPassword} class="space-y-4">
 				{#if error}
-					<div
-						class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
-					>
+					<div class=" border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80">
 						{error}
 					</div>
 				{/if}
@@ -88,14 +86,14 @@
 						required
 						name="email"
 						autocomplete="email"
-						class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+						class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 					/>
 				</div>
 
 				<button
 					type="submit"
 					disabled={isLoading}
-					class="mt-2 w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+					class="mt-2 w-full bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 				>
 					{isLoading ? 'Sending...' : 'Send reset link'}
 				</button>

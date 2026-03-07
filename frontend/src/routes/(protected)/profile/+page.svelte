@@ -117,22 +117,20 @@
 		{/if}
 
 		<!-- Update profile -->
-		<div class="overflow-hidden rounded-lg border border-white/6">
+		<div class="overflow-hidden border border-white/6">
 			<div class="border-b border-white/4 px-6 py-4">
 				<p class="text-xs tracking-widest text-white/40 uppercase">Profile information</p>
 			</div>
 			<div class="px-6 py-6">
 				<form onsubmit={handleUpdateProfile} class="space-y-4">
 					{#if profileError}
-						<div
-							class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
-						>
+						<div class=" border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80">
 							{profileError}
 						</div>
 					{/if}
 					{#if profileSuccess}
 						<div
-							class="rounded-md border border-emerald-500/10 bg-emerald-500/5 px-4 py-3 text-xs text-emerald-400/80"
+							class=" border border-emerald-500/10 bg-emerald-500/5 px-4 py-3 text-xs text-emerald-400/80"
 						>
 							{profileSuccess}
 						</div>
@@ -140,23 +138,27 @@
 
 					<div class="grid grid-cols-2 gap-4">
 						<div class="space-y-1.5">
-							<label for="name" class="text-xs tracking-widest text-white/20 uppercase">Full name</label>
+							<label for="name" class="text-xs tracking-widest text-white/20 uppercase"
+								>Full name</label
+							>
 							<input
 								type="text"
 								bind:value={name}
 								required
-                                name="name"
-								class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+								name="name"
+								class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 							/>
 						</div>
 						<div class="space-y-1.5">
-							<label for="username" class="text-xs tracking-widest text-white/20 uppercase">Username</label>
+							<label for="username" class="text-xs tracking-widest text-white/20 uppercase"
+								>Username</label
+							>
 							<input
 								type="text"
 								bind:value={username}
 								required
-                                name="username"
-								class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+								name="username"
+								class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 							/>
 						</div>
 					</div>
@@ -165,7 +167,7 @@
 						<button
 							type="submit"
 							disabled={isUpdatingProfile}
-							class="rounded-md bg-white px-6 py-2.5 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+							class=" bg-white px-6 py-2.5 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 						>
 							{isUpdatingProfile ? 'Saving...' : 'Save changes'}
 						</button>
@@ -175,48 +177,50 @@
 		</div>
 
 		<!-- Change password -->
-		<div class="mt-4 overflow-hidden rounded-lg border border-white/6">
+		<div class="mt-4 overflow-hidden border border-white/6">
 			<div class="border-b border-white/4 px-6 py-4">
 				<p class="text-xs tracking-widest text-white/40 uppercase">Change password</p>
 			</div>
 			<div class="px-6 py-6">
 				<form onsubmit={handleChangePassword} class="space-y-4">
 					{#if passwordError}
-						<div
-							class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
-						>
+						<div class=" border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80">
 							{passwordError}
 						</div>
 					{/if}
 					{#if passwordSuccess}
 						<div
-							class="rounded-md border border-emerald-500/10 bg-emerald-500/5 px-4 py-3 text-xs text-emerald-400/80"
+							class=" border border-emerald-500/10 bg-emerald-500/5 px-4 py-3 text-xs text-emerald-400/80"
 						>
 							{passwordSuccess}
 						</div>
 					{/if}
 
 					<div class="space-y-1.5">
-						<label for="currentPasswordset" class="text-xs tracking-widest text-white/20 uppercase">Current password</label>
+						<label for="currentPasswordset" class="text-xs tracking-widest text-white/20 uppercase"
+							>Current password</label
+						>
 						<input
 							type="password"
 							bind:value={currentPassword}
 							required
-                            name="currentPasswordset"
+							name="currentPasswordset"
 							autocomplete="current-password"
-							class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+							class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 						/>
 					</div>
 
 					<div class="space-y-1.5">
-						<label class="text-xs tracking-widest text-white/20 uppercase" for="newPassword">New password</label>
+						<label class="text-xs tracking-widest text-white/20 uppercase" for="newPassword"
+							>New password</label
+						>
 						<input
 							type="password"
 							bind:value={newPassword}
 							required
 							autocomplete="new-password"
-                            name="newPassword"
-							class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+							name="newPassword"
+							class="w-full border border-dashed border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 						/>
 					</div>
 
@@ -224,7 +228,7 @@
 						<button
 							type="submit"
 							disabled={isUpdatingPassword}
-							class="rounded-md bg-white px-6 py-2.5 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+							class=" bg-white px-6 py-2.5 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 						>
 							{isUpdatingPassword ? 'Updating...' : 'Update password'}
 						</button>

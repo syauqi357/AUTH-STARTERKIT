@@ -10,15 +10,56 @@
 	}
 </script>
 
-<div class="mx-auto min-h-screen flex flex-col items-center justify-center">
-	<h1 class="text-3xl font-bold">WELCOME TO THE AUTH STARTERKIT!</h1>
-	<p class="mt-3 text-lg">
-		This is a starterkit for authentication using <a href="https://better-auth.com/" class="text-blue-500 hover:text-blue-800">better-auth</a> . It includes a simple login form and a
-		protected route.
-	</p>
-<span class="flex gap-3 my-5 items-center">
-   <button onclick={gotoLogin} class="bg-slate-700 px-5 text-slate-50 rounded-md py-2 "> login </button>
-   <button onclick={gotoSignUp} class="bg-slate-50 border border-slate-500 px-5 text-slate-500 rounded-md py-2"> signup </button>
-</span>
+<div class="flex min-h-screen flex-col items-center justify-center bg-[#0a0a0a] px-4 font-mono">
+	<!-- Logo strip -->
+	<div class="mb-12 flex items-center justify-center gap-2.5 opacity-40">
+		<img src="../src/lib/assets/favicon.svg" alt="" class="h-6 w-6" />
+		<span class="text-xs text-white/30">+</span>
+		<img src="../src/lib/assets/better-auth.png" alt="" class="h-5" />
+		<span class="text-xs text-white/30">+</span>
+		<img src="../src/lib/assets/express.svg" alt="" class="h-5" />
+	</div>
 
+	<!-- Content -->
+	<div class="max-w-md text-center">
+		<p class="mb-4 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
+		<h1 class="mb-4 text-4xl font-bold tracking-tight text-white/90">
+			Auth <span class="text-orange-600">StarterKit</span>
+		</h1>
+		<p class="mb-10 text-sm leading-relaxed text-white/30">
+			A fullstack authentication starter for <a
+				href="https://svelte.dev/"
+				class="text-white/50 underline underline-offset-4 transition-colors hover:text-white/70"
+				>svelteKit</a
+			>
+			using
+			<a
+				href="https://better-auth.com/"
+				class="text-white/50 underline underline-offset-4 transition-colors hover:text-white/70"
+			>
+				better-auth
+			</a>
+			includes login, register, forgot password, and protected routes.
+		</p>
+
+		<div class="flex items-center justify-center gap-3">
+			<button
+				onclick={gotoLogin}
+				class=" bg-white px-6 py-2.5 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90"
+			>
+				Sign in
+			</button>
+			<button
+				onclick={gotoSignUp}
+				class=" border border-dashed border-white/10 px-6 py-2.5 text-xs font-medium tracking-widest text-white/40 uppercase transition-colors hover:border-white/20 hover:text-white/60"
+			>
+				Sign up
+			</button>
+		</div>
+	</div>
+
+	<!-- Bottom -->
+	<div class="absolute bottom-8 text-xs tracking-widest text-white/10 uppercase">
+		SvelteKit · Express · Better Auth · MySQL
+	</div>
 </div>

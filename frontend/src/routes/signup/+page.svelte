@@ -31,10 +31,6 @@
 			isLoading = false;
 		}
 	}
-
-	import type { PageProps } from './$types';
-
-	let { data }: PageProps = $props();
 </script>
 
 <div class="flex min-h-screen flex-col justify-center bg-[#0a0a0a] px-4 font-mono">
@@ -52,71 +48,77 @@
 		<div class="mb-10">
 			<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
 			<h1 class="text-3xl font-light tracking-tight text-white/90">Create account</h1>
-			<p class="mt-2 text-sm text-white/30">Get started for free</p>
+			<p class="mt-2 text-sm text-white/30 capitalize">get started</p>
 		</div>
 
 		<!-- Form -->
 		<form onsubmit={handleSignup} class="space-y-4">
 			{#if error}
-				<div
-					class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
-				>
+				<div class=" border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80">
 					{error}
 				</div>
 			{/if}
 
 			<div class="space-y-1.5">
-				<label class="text-xs tracking-widest text-white/20 uppercase" for="fullname">Full name</label>
+				<label class="text-xs tracking-widest text-white/20 uppercase" for="fullname"
+					>Full name</label
+				>
 				<input
 					type="text"
 					name="fullname"
 					bind:value={name}
 					required
 					autocomplete="name"
-					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+					class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
 			<div class="space-y-1.5">
-				<label for="usernamesignup" class="text-xs tracking-widest text-white/20 uppercase">Username</label>
+				<label for="usernamesignup" class="text-xs tracking-widest text-white/20 uppercase"
+					>Username</label
+				>
 				<input
 					type="text"
 					bind:value={username}
 					required
 					name="usernamesignup"
 					autocomplete="username"
-					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+					class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
 			<div class="space-y-1.5">
-				<label for="emailsignup" class="text-xs tracking-widest text-white/20 uppercase">Email</label>
+				<label for="emailsignup" class="text-xs tracking-widest text-white/20 uppercase"
+					>Email</label
+				>
 				<input
 					type="email"
 					name="emailsignup"
 					bind:value={email}
 					required
 					autocomplete="email"
-					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+					class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
 			<div class="space-y-1.5">
-				<label for="passwordSetup" class="text-xs tracking-widest text-white/20 uppercase">Password</label>
+				<label for="passwordSetup" class="text-xs tracking-widest text-white/20 uppercase"
+					>Password</label
+				>
 				<input
 					type="password"
 					name="passwordSetup"
 					bind:value={password}
 					required
 					autocomplete="new-password"
-					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+					class="w-full border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
 			<button
 				type="submit"
 				disabled={isLoading}
-				class="mt-2 w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+				class="mt-2 w-full bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 			>
 				{isLoading ? 'Creating account...' : 'Create account'}
 			</button>

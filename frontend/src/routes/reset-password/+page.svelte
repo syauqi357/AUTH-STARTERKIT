@@ -36,36 +36,36 @@
 		<!-- Header -->
 		<div class="mb-10">
 			<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Starterkit</p>
-			<h1 class="text-3xl font-light tracking-tight text-white/90">Reset password</h1>
+			<h1 class="text-3xl font-bold tracking-tight text-white/90">Reset password</h1>
 			<p class="mt-2 text-sm text-white/30">Enter your new password below</p>
 		</div>
 
 		<!-- Form -->
 		<form onsubmit={handleResetPassword} class="space-y-4">
 			{#if error}
-				<div
-					class="rounded-md border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80"
-				>
+				<div class=" border border-red-500/10 bg-red-500/5 px-4 py-3 text-xs text-red-400/80">
 					{error}
 				</div>
 			{/if}
 
 			<div class="space-y-1.5">
-				<label class="text-xs tracking-widest text-white/20 uppercase" for="newPasswordreset">New Password</label>
+				<label class="text-xs tracking-widest text-white/20 uppercase" for="newPasswordreset"
+					>New Password</label
+				>
 				<input
 					type="password"
 					bind:value={newPassword}
-                    name="newPasswordreset"
+					name="newPasswordreset"
 					required
 					autocomplete="new-password"
-					class="w-full rounded-md border border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
+					class="w-full border border-dashed border-white/8 bg-white/3 px-4 py-3 text-sm text-white/80 placeholder-white/20 transition-colors focus:border-white/20 focus:outline-none"
 				/>
 			</div>
 
 			<button
 				type="submit"
 				disabled={isLoading}
-				class="mt-2 w-full rounded-md bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
+				class="mt-2 w-full bg-white py-3 text-xs font-medium tracking-widest text-black uppercase transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-30"
 			>
 				{isLoading ? 'Resetting...' : 'Reset Password'}
 			</button>

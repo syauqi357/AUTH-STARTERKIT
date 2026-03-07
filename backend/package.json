@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch 'src/**/*.ts' --exec tsx src/server.ts",
+    "format": "prettier --write .",
     "generate:auth": "npx auth@latest generate --output src/db/auth/auth-schema.ts",
     "migrate:drizzle": "npx drizzle-kit migrate",
     "generate:drizzle": "npx drizzle-kit generate",
@@ -22,7 +23,8 @@
     "drizzle-orm": "^0.45.1",
     "express": "^5.2.1",
     "mysql2": "^3.19.0",
-    "nodemailer": "^8.0.1"
+    "nodemailer": "^8.0.1",
+    "prettier": "^3.8.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",

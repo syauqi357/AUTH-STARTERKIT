@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	// import { browser } from '$app/environment';
 
-	let {children} = $props();
+	let { children } = $props();
 
 	onMount(async () => {
 		const res = await authClient.getSession();
