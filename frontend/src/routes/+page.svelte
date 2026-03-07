@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import HeadLine from '$lib/components/headline.svelte';
 
 	export function gotoLogin() {
 		goto('/login');
@@ -12,13 +13,7 @@
 
 <div class="flex min-h-screen flex-col items-center justify-center bg-[#0a0a0a] px-4 font-mono">
 	<!-- Logo strip -->
-	<div class="mb-12 flex items-center justify-center gap-2.5 opacity-40">
-		<img src="../src/lib/assets/favicon.svg" alt="" class="h-6 w-6" />
-		<span class="text-xs text-white/30">+</span>
-		<img src="../src/lib/assets/better-auth.png" alt="" class="h-5" />
-		<span class="text-xs text-white/30">+</span>
-		<img src="../src/lib/assets/express.svg" alt="" class="h-5" />
-	</div>
+	<HeadLine/>
 
 	<!-- Content -->
 	<div class="max-w-md text-center">

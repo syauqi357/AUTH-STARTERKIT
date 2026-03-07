@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { authClient } from '$lib/auth-client';
 	import { goto } from '$app/navigation';
+	import Headline from '$lib/components/headline.svelte';
 
 	let name = $state('');
 	let username = $state('');
@@ -36,13 +37,7 @@
 <div class="flex min-h-screen flex-col justify-center bg-[#0a0a0a] px-4 font-mono">
 	<div class="mx-auto w-full max-w-sm">
 		<!-- Logo strip -->
-		<div class="mb-12 flex items-center justify-center gap-2.5 opacity-40">
-			<img src="../src/lib/assets/favicon.svg" alt="" class="h-6 w-6" />
-			<span class="text-xs text-white/30">+</span>
-			<img src="../src/lib/assets/better-auth.png" alt="" class="h-5" />
-			<span class="text-xs text-white/30">+</span>
-			<img src="../src/lib/assets/express.svg" alt="" class="h-5" />
-		</div>
+		<Headline/>
 
 		<!-- Header -->
 		<div class="mb-10">

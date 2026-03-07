@@ -29,7 +29,7 @@
 				<div class="flex items-center gap-4">
 					<div class="flex items-center gap-2">
 						<div
-							class="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/10 text-xs text-white/70"
+							class="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/10 text-xs text-white/70"
 						>
 							{session.user.name?.charAt(0).toUpperCase()}
 						</div>
@@ -38,7 +38,7 @@
 					<div class="h-4 w-px bg-white/10"></div>
 					<button
 						onclick={handlelogout}
-						class="text-xs tracking-wider text-white/30 uppercase transition-colors hover:text-white/70"
+						class="text-xs tracking-wider text-red-300 uppercase transition-colors hover:text-red-400/70"
 					>
 						Sign out
 					</button>

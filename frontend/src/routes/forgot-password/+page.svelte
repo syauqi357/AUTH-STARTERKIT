@@ -20,7 +20,6 @@
 
 			if (authError) throw new Error(authError.message);
 			success = true;
-			// goto('/dashboard');
 		} catch (err) {
 			error = err instanceof Error ? err.message : 'error occurred.';
 		} finally {
