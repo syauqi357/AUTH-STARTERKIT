@@ -10,8 +10,8 @@ backend/src/db/migrations
 .vscode
 .idea
 *.log
-*.env.examples
-*.env.example
+!.env.examples
+!.env.example
 *.bak
 *.tmp
 *.swp

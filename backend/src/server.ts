@@ -15,11 +15,6 @@ app.use(
   }),
 );
 
-app.use((req, res, next) => {
-  console.log(req.method, req.path);
-  next();
-});
-
 app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
 
