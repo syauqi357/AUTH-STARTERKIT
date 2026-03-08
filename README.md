@@ -231,44 +231,6 @@ AUTH-STARTERKIT
 │  ├─ .prettierignore
 │  ├─ .prettierrc
 │  ├─ .svelte-kit
-│  │  ├─ ambient.d.ts
-│  │  ├─ generated
-│  │  │  ├─ client
-│  │  │  │  ├─ app.js
-│  │  │  │  ├─ matchers.js
-│  │  │  │  └─ nodes
-│  │  │  │     ├─ 0.js
-│  │  │  │     ├─ 1.js
-│  │  │  │     ├─ 2.js
-│  │  │  │     ├─ 3.js
-│  │  │  │     ├─ 4.js
-│  │  │  │     ├─ 5.js
-│  │  │  │     ├─ 6.js
-│  │  │  │     ├─ 7.js
-│  │  │  │     └─ 8.js
-│  │  │  ├─ root.js
-│  │  │  ├─ root.svelte
-│  │  │  └─ server
-│  │  │     └─ internal.js
-│  │  ├─ non-ambient.d.ts
-│  │  ├─ tsconfig.json
-│  │  └─ types
-│  │     ├─ route_meta_data.json
-│  │     └─ src
-│  │        └─ routes
-│  │           ├─ $types.d.ts
-│  │           ├─ (protected)
-│  │           │  ├─ $types.d.ts
-│  │           │  ├─ dashboard
-│  │           │  │  └─ $types.d.ts
-│  │           │  └─ profile
-│  │           │     └─ $types.d.ts
-│  │           ├─ forgot-password
-│  │           │  └─ $types.d.ts
-│  │           ├─ login
-│  │           │  └─ $types.d.ts
-│  │           └─ signup
-│  │              └─ $types.d.ts
 │  ├─ package.json
 │  ├─ README.md
 │  ├─ src

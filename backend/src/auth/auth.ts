@@ -68,7 +68,7 @@ export const auth = betterAuth({
 `,
       });
       // console log for demonstration, you should replace it with actual email sending code
-      console.log(`Send email to ${user.email} : ${url}`);
+      // console.log(`Send email to ${user.email} : ${url}`);
     },
   },
   plugins: [username()],

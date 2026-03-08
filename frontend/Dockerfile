@@ -11,6 +11,6 @@ RUN npm run build
 # serve static files
 RUN npm install -g serve
 
-EXPOSE 5173
+EXPOSE 5125
 
-CMD ["serve", "-s", "build", "-l", "5173"]
+CMD ["serve", "-s", "build", "-l", "5125"]

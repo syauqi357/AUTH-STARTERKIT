@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx drizzle-kit migrate && npx tsx src/server.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec tsx src/server.ts",
     "format": "prettier --write .",
     "generate:auth": "npx auth@latest generate --output src/db/auth/auth-schema.ts",
@@ -20,6 +21,7 @@
     "better-auth": "^1.5.4",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
+    "dotenv-expand": "^12.0.3",
     "drizzle-orm": "^0.45.1",
     "express": "^5.2.1",
     "mysql2": "^3.19.0",
