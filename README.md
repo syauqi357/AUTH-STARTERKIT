@@ -308,3 +308,93 @@ AUTH-STARTERKIT
 └─ README.md
 
 ```
+```
+AUTH-STARTERKIT
+├─ backend
+│  ├─ backend.Dockerfile
+│  ├─ drizzle.config.ts
+│  ├─ package.json
+│  ├─ src
+│  │  ├─ auth
+│  │  │  └─ auth.ts
+│  │  ├─ db
+│  │  │  ├─ auth
+│  │  │  │  └─ auth-schema.ts
+│  │  │  ├─ index.ts
+│  │  │  └─ schema
+│  │  ├─ internal
+│  │  │  ├─ controllers
+│  │  │  ├─ routes
+│  │  │  └─ services
+│  │  ├─ server.ts
+│  │  └─ utils
+│  │     └─ drop-all-tables.ts
+│  └─ tsconfig.json
+├─ docker-compose.yml
+├─ frontend
+│  ├─ .npmrc
+│  ├─ .prettierignore
+│  ├─ .prettierrc
+│  ├─ .svelte-kit
+│  ├─ frontend.Dockerfile
+│  ├─ package.json
+│  ├─ README.md
+│  ├─ src
+│  │  ├─ app.d.ts
+│  │  ├─ app.html
+│  │  ├─ lib
+│  │  │  ├─ assets
+│  │  │  │  ├─ better-auth.png
+│  │  │  │  ├─ express.svg
+│  │  │  │  ├─ favicon.svg
+│  │  │  │  ├─ fonts
+│  │  │  │  │  └─ jetbrains-mono-font
+│  │  │  │  │     ├─ JetBrainsMono-Bold.woff2
+│  │  │  │  │     ├─ JetBrainsMono-BoldItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-ExtraBold.woff2
+│  │  │  │  │     ├─ JetBrainsMono-ExtraBoldItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-ExtraLight.woff2
+│  │  │  │  │     ├─ JetBrainsMono-ExtraLightItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-Italic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-Light.woff2
+│  │  │  │  │     ├─ JetBrainsMono-LightItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-Medium.woff2
+│  │  │  │  │     ├─ JetBrainsMono-MediumItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-Regular.woff2
+│  │  │  │  │     ├─ JetBrainsMono-SemiBold.woff2
+│  │  │  │  │     ├─ JetBrainsMono-SemiBoldItalic.woff2
+│  │  │  │  │     ├─ JetBrainsMono-Thin.woff2
+│  │  │  │  │     └─ JetBrainsMono-ThinItalic.woff2
+│  │  │  │  └─ plus.svg
+│  │  │  ├─ auth-client.ts
+│  │  │  ├─ components
+│  │  │  │  └─ headline.svelte
+│  │  │  └─ index.ts
+│  │  └─ routes
+│  │     ├─ (protected)
+│  │     │  ├─ +layout.svelte
+│  │     │  ├─ dashboard
+│  │     │  │  └─ +page.svelte
+│  │     │  └─ profile
+│  │     │     └─ +page.svelte
+│  │     ├─ +layout.svelte
+│  │     ├─ +layout.ts
+│  │     ├─ +page.svelte
+│  │     ├─ forgot-password
+│  │     │  └─ +page.svelte
+│  │     ├─ layout.css
+│  │     ├─ login
+│  │     │  └─ +page.svelte
+│  │     ├─ reset-password
+│  │     │  └─ +page.svelte
+│  │     └─ signup
+│  │        └─ +page.svelte
+│  ├─ static
+│  │  └─ robots.txt
+│  ├─ svelte.config.js
+│  ├─ tsconfig.json
+│  └─ vite.config.ts
+├─ README.md
+└─ SMTP-SETUP.md
+
+```

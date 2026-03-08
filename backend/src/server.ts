@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
   res.send("starterkit backend");
 });
 
-app.listen(port, () => {
+app.listen(Number(port),'0.0.0.0', () => {
   console.log(`Example app listening on port ${port}`);
 });
