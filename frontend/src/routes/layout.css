@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 /* url(../lib/assets/fonts/jetbrains-mono-font/JetBrainsMono-Bold.woff2); */
-@plugin '@tailwindcss/forms';
+/* @plugin '@tailwindcss/forms'; */
 @plugin '@tailwindcss/typography';
 
 @font-face {

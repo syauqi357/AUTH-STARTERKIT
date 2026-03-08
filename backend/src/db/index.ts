@@ -1,9 +1,12 @@
-import { drizzle } from "drizzle-orm/mysql2";
-import mysql from "mysql2/promise";
+import { drizzle } from "drizzle-orm/node-postgres";
+// import mysql from "mysql2/promise";
+import pg from "pg";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = mysql.createPool(process.env.DATABASE_URL!);
+const pool = new pg.Pool({
+   connectionString: process.env.DATABASE_URL
+});
 
-export const DATABASE_SET = drizzle(db);
+export const DATABASE_SET = drizzle(pool);
