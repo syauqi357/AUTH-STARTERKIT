@@ -13,4 +13,4 @@ RUN npm install
 
 EXPOSE 5173
 
-CMD ["npx", "vite", "dev", "--host", "0.0.0.0", "--port", "5173"]
+CMD ["npm", "run", "dev", "--", "--host", "--port", "5173"]

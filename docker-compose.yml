@@ -46,7 +46,7 @@ services:
     container_name: starterkit_frontend
     restart: unless-stopped
     ports:
-      - "5125:5125"
+      - "5173:5173"
     environment:
       VITE_API_URL: ${VITE_API_URL}
       VITE_APP_URL: ${VITE_APP_URL}
