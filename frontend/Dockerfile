@@ -6,11 +6,11 @@ COPY . .
 
 RUN npm install
 
-RUN npm run build
+# RUN npm run build
 
 # serve static files
-RUN npm install -g serve
+# RUN npm install -g serve
 
-EXPOSE 5125
+EXPOSE 5173
 
-CMD ["serve", "-s", "build", "-l", "5125"]
+CMD ["npx", "vite", "dev", "--host", "0.0.0.0", "--port", "5173"]

@@ -7,7 +7,7 @@ import { auth } from "./auth/auth.ts";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const EXPRESS_PORT = process.env.PORT;
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
   res.send("starterkit backend");
 });
 
-app.listen(Number(port),'0.0.0.0', () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(Number(EXPRESS_PORT),'0.0.0.0', () => {
+  console.log(`app listening on port ${EXPRESS_PORT}`);
 });

@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "docker:dev": "docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "docker:prod": "docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build",
+    "docker:down": "docker compose down",
+    "docker:fresh": "docker compose down -v && docker compose up --build"
+  },
   "dependencies": {
     "dotenv": "^17.3.1"
   }
