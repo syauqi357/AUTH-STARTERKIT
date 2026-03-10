@@ -13,3 +13,81 @@ dist
 # Ignore Docker-related files
 Dockerfile*
 .dockerignore
+
+# =========================
+# Dependencies
+# =========================
+backend/node_modules/
+frontend/node_modules/
+node_modules
+
+# =========================
+# Build / Distribution
+# =========================
+backend/dist/
+frontend/dist/
+frontend/build/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+frontend/.env
+backend/.env
+!.env.example
+!.env.examples
+
+# =========================
+# Database / Generated Files
+# =========================
+backend/src/db/migrations/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+
+# =========================
+# Logs & Cache
+# =========================
+*.log
+*.cache
+
+# =========================
+# Temp / Backup Files
+# =========================
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# Archives
+# =========================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# =========================
+# Binaries
+# =========================
+*.exe
+*.dll
+*.so
+*.dylib
+
+# =========================
+# Lock Files
+# =========================
+frontend/package-lock.json
+backend/package-lock.json
+frontend/yarn.lock
+backend/yarn.lock
