@@ -16,7 +16,8 @@
 		try {
 			const { data, error: authError } = await authClient.signIn.username({
 				username,
-				password
+				password,
+				rememberMe: true
 			});
 
 			if (authError) throw new Error(authError.message);
