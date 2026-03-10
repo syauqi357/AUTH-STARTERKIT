@@ -3,6 +3,41 @@
 	import { authClient } from '$lib/auth-client';
 	import { onMount } from 'svelte';
 
+	const greetings = [
+		'Good to see you',
+		'Welcome back',
+		'Hey there',
+		"Glad you're here",
+		"What's up",
+		"Look who's back",
+		'Nice to see you',
+		"You're back!",
+		'Hello again',
+		'Good to see you, 朋友 (péngyǒu)',
+		'Welcome back, 歡喜轉來 (hoan-hí tńg-lâi)',
+		'Hey there 你好 (nǐ hǎo)',
+		"Glad you're here, 真歡喜 (tsin huann-hí)",
+		"What's up 最近好無 (tsuē-kīn hó--bô)",
+		"Look who's back, 是你 (sī lí)",
+		'Nice to see you, 好久不見 (hǎojiǔ bùjiàn)',
+		"You're back! 轉來了 (tńg-lâi--ah)",
+		'Hello again, 又見面了 (yòu jiànmiàn le)',
+		'Hey! 食飽未 (tsia̍h-pá--buē)',
+		'Welcome! 歡迎光臨 (huānyíng guānglín)',
+		'Great to see you, 歡喜 (hoan-hí)',
+		'Missed you! 想我無 (siūnn guá bô)',
+		'Yo! 喂 (uēi)',
+		'Good day, 好天 (hó-thinn)',
+		'مرحباً بعودتك',
+		'أهلاً وسهلاً',
+		'يسعدنا وجودك',
+		'كيف حالك',
+		'تشرفنا بزيارتك',
+		'نورت المكان'
+	];
+
+	const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
 	let session = $state<any>(null);
 
 	onMount(async () => {
@@ -13,6 +48,10 @@
 	async function handlelogout() {
 		await authClient.signOut();
 		goto('/login');
+	}
+
+	async function gotoProfile() {
+		goto('/profile');
 	}
 </script>
 
@@ -27,18 +66,23 @@
 
 			{#if session}
 				<div class="flex items-center gap-4">
-					<div class="flex items-center gap-2">
-						<div
+					<button
+						onclick={gotoProfile}
+						class="cursor-pointer border border-white/20 px-4 py-2 transition-all ease-in-out hover:border-white/50 hover:bg-white/20"
+					>
+						<div class="flex items-center gap-2">
+							<!-- <div
 							class="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/10 text-xs text-white/70"
 						>
 							{session.user.name?.charAt(0).toUpperCase()}
+						</div> -->
+							<span class="text-xs text-white/50">{session.user.name}</span>
 						</div>
-						<span class="text-sm text-white/50">{session.user.name}</span>
-					</div>
+					</button>
 					<div class="h-4 w-px bg-white/10"></div>
 					<button
 						onclick={handlelogout}
-						class="text-xs tracking-wider text-red-300 uppercase transition-colors hover:text-red-400/70"
+						class="border border-red-500/20 px-4 py-2 text-xs tracking-wider text-red-400/50 uppercase transition-all hover:border-red-500/40 hover:bg-red-950 hover:text-red-400"
 					>
 						Sign out
 					</button>
@@ -54,7 +98,7 @@
 			<div class="mb-16">
 				<p class="mb-3 text-xs tracking-widest text-white/20 uppercase">Dashboard</p>
 				<h1 class="text-4xl font-light tracking-tight text-white/90">
-					Good to see you, <span class="text-white">{session.user.name}</span>
+					{randomGreeting}, <span class="text-white">{session.user.name}</span>
 				</h1>
 				<p class="mt-2 text-sm text-white/30">{session.user.email}</p>
 			</div>
@@ -81,22 +125,6 @@
 						})}
 					</p>
 				</div>
-			</div>
-
-			<!-- Nav links -->
-			<div class="flex gap-2">
-				<a
-					href="/profile"
-					class="border border-white/10 px-4 py-2 text-xs tracking-wider text-white/40 uppercase transition-all hover:border-white/20 hover:text-white/70"
-				>
-					Profile
-				</a>
-				<button
-					onclick={handlelogout}
-					class="border border-red-500/20 px-4 py-2 text-xs tracking-wider text-red-400/50 uppercase transition-all hover:border-red-500/40 hover:bg-red-950 hover:text-red-400"
-				>
-					Sign out
-				</button>
 			</div>
 		{:else}
 			<!-- Loading state -->

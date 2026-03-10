@@ -11,6 +11,6 @@ RUN npm install
 # serve static files
 # RUN npm install -g serve
 
-EXPOSE 5173
+EXPOSE 5174
 
 CMD ["npm", "run", "dev", "--", "--host", "--port", "5173"]
